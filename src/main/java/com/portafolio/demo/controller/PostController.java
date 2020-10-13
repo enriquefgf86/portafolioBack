@@ -8,10 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "https://frontportafolio.herokuapp.com", maxAge = 3600)
+//@CrossOrigin(origins = "https://frontportafolio.herokuapp.com", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("portafolio/version1")
-//@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+
 //@CrossOrigin(origins = "*", maxAge = 3600)
 
 public class PostController {
