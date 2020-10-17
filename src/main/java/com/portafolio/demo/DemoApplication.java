@@ -29,7 +29,7 @@ public class DemoApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/post/all").allowedOrigins("http://localhost:4200","https://frontportafolio.herokuapp.com")
+				registry.addMapping("/post/all").allowedOrigins("*")
 			            .allowedMethods("PUT", "DELETE","POST","GET")
 						.allowedHeaders("application/json", "text/plain", "application/x-www-form-urlencoded")
 						.allowCredentials(false).maxAge(3600);

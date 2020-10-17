@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@CrossOrigin(origins = "*", maxAge = 3600)
 //@CrossOrigin(origins = "http://portafolio-angular-bucket.s3-website-us-west-2.amazonaws.com", maxAge = 3600)
 //@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
-@CrossOrigin(origins = "https://frontportafolio.herokuapp.com", maxAge = 3600)
+//@CrossOrigin(origins = "https://frontportafolio.herokuapp.com", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("portafolio/version1")
 
