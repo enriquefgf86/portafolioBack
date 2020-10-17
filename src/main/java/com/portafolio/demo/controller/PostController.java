@@ -8,14 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-//@CrossOrigin(origins = "https://frontportafolio.herokuapp.com", maxAge = 3600)
-//@CrossOrigin(origins = "http://portafolio-angular-bucket.s3-website-us-west-2.amazonaws.com", maxAge = 3600)
 
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+//@CrossOrigin(origins = "*", maxAge = 3600)
+//@CrossOrigin(origins = "http://portafolio-angular-bucket.s3-website-us-west-2.amazonaws.com", maxAge = 3600)
+//@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@CrossOrigin(origins = "https://frontportafolio.herokuapp.com", maxAge = 3600)
 @RestController
 @RequestMapping("portafolio/version1")
 
-//@CrossOrigin(origins = "*", maxAge = 3600)
+
 
 public class PostController {
 
@@ -48,8 +49,6 @@ public class PostController {
     public List<Post> getSearchedPosts(@PathVariable ("search") String search){
         return postRepository.searchPosts(search);
     }
-
-
 
     @PostMapping("/post/{idPost}/add/comment")
     public UpdateResult adCoomentToPost(@PathVariable("idPost") String idPost,@RequestBody Coments commentAdded){
