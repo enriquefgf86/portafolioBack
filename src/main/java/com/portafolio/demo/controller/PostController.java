@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@CrossOrigin(origins = "http://portafolio-angular-bucket.s3-website-us-west-2.amazonaws.com", maxAge = 3600)
-//@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
-//@CrossOrigin(origins = "https://frontportafolio.herokuapp.com", maxAge = 3600)
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("portafolio/version1")
@@ -36,13 +33,11 @@ public class PostController {
     @PostMapping("/post/create")
     public Post savePosts(@RequestBody Post postSaved){
         return postRepository.savePost(postSaved);
-
     }
 
     @DeleteMapping("/post/delete/{idPost}/post")
     public Post deleteAllThePosts(@PathVariable ("idPost") String idPost){
         return postRepository.deletePostById(idPost);
-
     }
 
     @GetMapping("/post/{search}/search")
@@ -53,6 +48,10 @@ public class PostController {
     @PostMapping("/post/{idPost}/add/comment")
     public UpdateResult adCoomentToPost(@PathVariable("idPost") String idPost,@RequestBody Coments commentAdded){
         return postRepository.addComment(idPost,commentAdded);
+    }
 
+    @PostMapping("post/update/{idPost}/post")
+    public void updatePost(@PathVariable("idPost") String idPost,@RequestBody Post post){
+         postRepository.updatePostById(idPost,post);
     }
 }
